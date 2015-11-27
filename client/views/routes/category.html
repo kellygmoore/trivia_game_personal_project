@@ -1,0 +1,32 @@
+<!--<div ng-controller="MainCtrl">-->
+
+    <div class="mainBody container">
+        <div class="row">
+            <div id="logoDiv" class="col-md-2">
+                <img src="/assets/views/Drawing.png" alt="logo">
+            </div>
+            <div id="categoryTitleDiv" class="col-md-6">
+                <p>Choose A Category</p>
+            </div>
+            <div id="pointsDifficultyDiv" class="col-md-2">
+                <p>Total Points <span id="ptsSpan">###</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 headerDiv"></div>
+        </div>
+
+        <div class="categoryListDiv row">
+            <div class="col-md-10">
+                <div ng-repeat="cat in trivia" ng-if="cat.category != null">
+                    <h3><a ng-click="playCategory(cat)" href="#questionpage">{{cat.category}}</a></h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!--</div>-->
+
+
+
+

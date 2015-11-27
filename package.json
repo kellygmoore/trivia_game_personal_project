@@ -1,0 +1,19 @@
+{
+  "name": "kelly__personal_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Kelly Garske Moore",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-uglify": "^0.10.1",
+    "path": "^0.12.7",
+    "pg": "^4.4.3"
+  }
+}

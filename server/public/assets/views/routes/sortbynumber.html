@@ -1,0 +1,16 @@
+<div ng-controller="MainCtrl">
+    <div class="mainBody">
+    <h3>Solve the Equations and Put in the Correct Ascending Order</h3>
+    <div class="container-fluid">
+        <ul ng-model="numberlist1" as-sortable="sortableOptions">
+            <li ng-repeat="item in numberlist1" as-sortable-item class="as-sortable-item" id="number1">
+                <div as-sortable-item-handle class="as-sortable-item-handle sortElement" style="height:50px">
+                    <span data-ng-bind="item.name"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+        <br>
+        <br>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div ng-controller="InstructionsCtrl">
+
+    <div class="mainBody">
+        <div class="bigLogoDiv">
+            <img src="/assets/views/Drawing.png" alt="logo">
+        </div>
+        <div id="instructions">
+            <h3>Welcome!</h3>
+            <h4>inOrder is a fun trivia game based on sorting five <br>randomly placed answers into the proper order.</h4>
+            <h4><a ng-click="showInstructions()">Click to view instructions</a></h4>
+            <p ng-hide="flip">First, choose a category from the list. <br><br>
+            Next, properly sort the five answers for each question to earn points.<br>
+                Use your mouse to drag-and-drop the answers into the order you want. <br>
+                Each question has a difficulty level and number of points you can earn.<br>
+                You will lose 50 points for each attempt made.  When you are out of points,<br>
+                you will be out of attempts.  You will see the correct order, and move to the <br>
+                next question...so choose your order carefully!<br><br>
+            Then, when you have successfully ordered the last question in the chosen category,<br>
+            you will have completed that category,earning a badge for your effort!<br>
+            View your points total and you can choose a new category.</p>
+        </div>
+        <div class="loginOrRegisterDiv row">
+            <div class="col-md-3 col-md-offset-2">
+                <h3><a href="#login">Login to Play</a></h3>
+            </div>
+            <div class="col-md-3 col-md-offset-2">
+                <h3><a href="#register">Register New Player</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
