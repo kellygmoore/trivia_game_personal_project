@@ -23,16 +23,20 @@ myApp.factory('ShareData', ["$http", function($http){
         getCategory: function(){
             return categoryToPlay;
         },
-        //playCategory: function(catData){
-        //    console.log("CatData: ", catData);
-        //    categoryToPlay = catData.category;
-        //}
         playCategory: function(catData){
             categoryToPlay = {
                 category: catData.category,
                 points: catData.points,
                 difficulty: catData.difficulty,
-                question: catData.question
+                question: catData.question,
+                answerArray: [
+                    {ans: catData.ans1, id: 1},
+                    {ans: catData.ans2, id: 2},
+                    {ans: catData.ans3, id: 3},
+                    {ans: catData.ans4, id: 4},
+                    {ans: catData.ans5, id: 5}
+                ],
+                solutionArray: [catData.sol1, catData.sol2, catData.sol3, catData.sol4, catData.sol5]
             }
         }
     };

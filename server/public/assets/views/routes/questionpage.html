@@ -37,10 +37,10 @@
             </div>
 
             <div class="container-fluid col-md-4 col-md-offset-2">
-                <ul ng-model="question1" as-sortable="sortableOptions">
-                    <li ng-repeat="answer in question1" as-sortable-item class="as-sortable-item answerBlocks">
+                <ul ng-model="answerArray" as-sortable="sortableOptions">
+                    <li ng-repeat="answer in answerArray" as-sortable-item class="as-sortable-item answerBlocks">
                         <div as-sortable-item-handle class="as-sortable-item-handle sortElement" style="height:50px">
-                            <span data-ng-bind="answer.name"></span>
+                            <span data-ng-bind="answer.ans"></span>
                         </div>
                     </li>
                 </ul>
