@@ -24,7 +24,7 @@ body {
 }
 
 #middle {
-    margin-top: 55px;
+    margin-top: 20px;
     text-align: center;
     /*border: 1px dashed blue;*/
 }
@@ -34,9 +34,9 @@ body {
     height: 5px;
 }
 
-h1 {
-    margin: 30px 0 20px 65px;
-}
+/*h1 {*/
+    /*margin: 30px 0 20px 65px;*/
+/*}*/
 
 img {
     width: 100px;
@@ -71,6 +71,7 @@ img {
 .buttonClass {
     width: 175px;
     border: 1px solid black;
+    margin-top: 20px;
     font-size: 22px;
     border-radius: 5px;
     text-align: center;
@@ -86,6 +87,19 @@ img {
 .answerBlocks span {
     font-size: 22px;
     text-shadow: 1px 1px 2px black;
+}
+
+.solutionBlocks {
+    width: 200px;
+    height: 65px;
+    margin: 17px;
+    border: 1px solid red;
+    border-radius: 5px;
+    list-style: none;
+    color: #747472;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 22px;
 }
 
 #pointsDifficultyDiv {
@@ -131,10 +145,10 @@ img {
     color: orangered;
 }
 
-.correctStatusDiv, .moveOnDiv, .buttonDiv {
-    display: block;
-    float: right;
-}
+/*.correctStatusDiv, .moveOnDiv, .buttonDiv {*/
+    /*display: block;*/
+    /*float: right;*/
+/*}*/
 
 #showNumberCorrect {
     margin-top: 20px;

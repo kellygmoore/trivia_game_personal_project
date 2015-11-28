@@ -31,6 +31,7 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
 
     $scope.points = $scope.catObject.points;
     $scope.answerArray = $scope.catObject.answerArray;
+    $scope.solutionArray = $scope.catObject.solutionArray;
 
     //on click of the Check Order button, do this
     $scope.checkAnswers = function() {
@@ -39,7 +40,7 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
         if($scope.points === 0){
             //make it stop
         }
-        console.log("Points total here after click:", $scope.pointsTotal);
+        console.log("Points total here after click:", $scope.points);
 
         $scope.trueOrFalse = false;
         for(i=0; i<$scope.answerArray.length; i++){
