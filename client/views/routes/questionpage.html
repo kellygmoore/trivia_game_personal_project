@@ -21,9 +21,9 @@
     <div class="mainBody">
         <div class="gameDiv row">
             <div id="middle" class="col-md-4 col-md-offset-1">
-                <h1>{{catObject.question}}</h1>
+                <h1 class="animated fadeInLeft">{{catObject.question}}</h1>
 
-                    <button class="buttonClass" ng-click="checkAnswers()">Check Order</button><br>
+                    <button class="buttonClass animated bounceInUp" ng-click="checkAnswers()">Check Order</button><br>
 
                     <p ng-hide="trueOrFalse" id="showNumberCorrect">{{counter}}/5 are in the correct order</p><br><br>
 
@@ -44,7 +44,7 @@
 
         <div class="col-md-2" ng-hide="showNextArrow">
             <ul ng-model="solutionArray">
-                <li ng-repeat="solution in solutionArray" class="solutionBlocks">
+                <li ng-repeat="solution in solutionArray" class="solutionBlocks animated flipInX">
                     <div class="solutionDiv">
                         <span>{{solution}}</span>
                     </div>
