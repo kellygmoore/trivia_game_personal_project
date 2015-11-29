@@ -8,7 +8,7 @@
                 <p>{{catObject.category}}</p>
             </div>
             <div id="pointsDifficultyDiv" class="col-md-2">
-                <p>Points <span class="ptsSpan">{{catObject.points}}</span></p>
+                <p>Points <span class="ptsSpan">{{points}}</span></p>
                 <p>Difficulty <span id="diffSpan">{{catObject.difficulty}}</span></p>
             </div>
         </div>
@@ -23,18 +23,18 @@
             <div id="middle" class="col-md-4 col-md-offset-1">
                 <h1 class="animated fadeInLeft">{{catObject.question}}</h1>
 
-                    <button class="buttonClass animated bounceInUp" ng-click="checkAnswers()">Check Order</button><br>
+                    <button class="buttonClass animated bounceInUp" ng-disabled="!showNextArrow" ng-click="checkAnswers()">Check Order</button><br>
 
                     <p ng-hide="trueOrFalse" id="showNumberCorrect">{{counter}}/5 are in the correct order</p><br><br>
 
-                    <p ng-hide="showNextArrow">inOrder Success!</p>
-                    <p ng-hide="showNextArrow" id="showNextArrow">Next Question<img src="assets/views/nextarrow.png" alt="next arrow"</p>
+                    <h4 ng-hide="showNextArrow" class="animated tada">inOrder Success!</h4>
+                    <div ng-hide="showNextArrow" id="showNextArrow"><button ng-click="playCategory()">Next Question<img src="assets/views/nextarrow.png" alt="next arrow"</button></div>
 
             </div>
 
             <div class="container-fluid col-md-3">  <!--col-md-offset-1-->
-                <ul ng-model="answerArray" as-sortable="sortableOptions">
-                    <li ng-repeat="answer in answerArray" as-sortable-item class="as-sortable-item answerBlocks">
+                <ul ng-model="randomAnswerArray" as-sortable="sortableOptions" is-disabled="!showNextArrow">
+                    <li ng-repeat="answer in randomAnswerArray" as-sortable-item class="as-sortable-item answerBlocks">
                         <div as-sortable-item-handle class="as-sortable-item-handle sortElement" style="height:50px">
                             <span data-ng-bind="answer.ans"></span>
                         </div>
@@ -44,9 +44,9 @@
 
         <div class="col-md-2" ng-hide="showNextArrow">
             <ul ng-model="solutionArray">
-                <li ng-repeat="solution in solutionArray" class="solutionBlocks animated flipInX">
-                    <div class="solutionDiv">
-                        <span>{{solution}}</span>
+                <li ng-repeat="solution in solutionArray" class="solutionBlocks">
+                    <div class="solutionDiv animated slideInLeft">
+                        <span>--- {{solution}}</span>
                     </div>
                 </li>
             </ul>

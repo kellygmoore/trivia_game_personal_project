@@ -4,7 +4,7 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
         containment: '#sortable-container'
     };
 
-//set variables
+    //set variables
     $scope.trueOrFalse = true;
     $scope.showNextArrow = true;
     $scope.trivia = [];
@@ -30,21 +30,25 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
     console.log("$scope.catObject: ", $scope.catObject);
 
     $scope.points = $scope.catObject.points;
-    $scope.answerArray = $scope.catObject.answerArray;
+
+
+
     $scope.solutionArray = $scope.catObject.solutionArray;
+    $scope.randomAnswerArray = $scope.catObject.randomAnswerArray;
+
 
     //on click of the Check Order button, do this
     $scope.checkAnswers = function() {
         $scope.counter = 0;
-        $scope.points -= 50;
-        if($scope.points === 0){
-            //make it stop
-        }
+        //$scope.points -= 50;
+        //if($scope.points === 0){
+        //    //make it stop
+        //}
         console.log("Points total here after click:", $scope.points);
 
         $scope.trueOrFalse = false;
-        for(i=0; i<$scope.answerArray.length; i++){
-            if ($scope.answerArray[i].id === (i+1)) {
+        for(i=0; i<$scope.randomAnswerArray.length; i++){
+            if ($scope.randomAnswerArray[i].id === (i+1)) {
                 console.log(i, " is correct!");
                 $scope.counter++;
             }
@@ -52,11 +56,19 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
         if($scope.counter === 5){
             $scope.showNextArrow = false;
             $scope.trueOrFalse = true;
+        } else {
+            $scope.points -= 50;
+            if($scope.points === 0){
+                //make it stop
+            }
         }
         console.log("The counter is at: ", $scope.counter);
     }
 
 }]);
+
+
+
 
 
 myApp.controller('InstructionsCtrl', ["$scope", function($scope) {
