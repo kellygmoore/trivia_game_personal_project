@@ -15,7 +15,7 @@ router.get('/', function(req, res){
     pg.connect(connectionString, function(err, client, done){
 
         var query = client.query("SELECT id, category, difficulty, points, question, " +
-            "ans1, ans2, ans3, ans4, ans5, sol1, sol2, sol3, sol4, sol5 FROM inordertable");
+            "ans1, ans2, ans3, ans4, ans5, sol1, sol2, sol3, sol4, sol5 FROM inordertable ORDER BY id ASC;");
 
         query.on('row', function(row){
             triviaArray.push(row);

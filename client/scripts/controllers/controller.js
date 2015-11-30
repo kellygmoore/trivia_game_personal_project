@@ -22,17 +22,23 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
         $scope.trivia = $scope.shareData.triviaData();
     }
 
+    console.log("Here is trivia array: ", $scope.trivia);
+
     //play a session based on Category clicked on
     $scope.catObject = $scope.shareData.getCategory();
-    $scope.playCategory = function(newValue) {
+    $scope.playCategory = function(newValue){
+        console.log("YAH");
         $scope.shareData.playCategory(newValue);
+
     };
-    console.log("$scope.catObject: ", $scope.catObject);
+    //$scope.catObject = $scope.shareData.getCategory();
+
+    //console.log("catObject id: ", $scope.catObject.idNum);
+
+    $scope.nextCatObjectIndex = $scope.catObject.idNum;
+    console.log("next question button index: ", $scope.nextCatObjectIndex);
 
     $scope.points = $scope.catObject.points;
-
-
-
     $scope.solutionArray = $scope.catObject.solutionArray;
     $scope.randomAnswerArray = $scope.catObject.randomAnswerArray;
 
@@ -40,16 +46,13 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
     //on click of the Check Order button, do this
     $scope.checkAnswers = function() {
         $scope.counter = 0;
-        //$scope.points -= 50;
-        //if($scope.points === 0){
-        //    //make it stop
-        //}
+
         console.log("Points total here after click:", $scope.points);
 
         $scope.trueOrFalse = false;
         for(i=0; i<$scope.randomAnswerArray.length; i++){
             if ($scope.randomAnswerArray[i].id === (i+1)) {
-                console.log(i, " is correct!");
+                //console.log(i, " is correct!");
                 $scope.counter++;
             }
         }
@@ -62,12 +65,10 @@ myApp.controller('MainCtrl', ["$scope", "ShareData", function($scope, ShareData)
                 //make it stop
             }
         }
-        console.log("The counter is at: ", $scope.counter);
+        //console.log("The counter is at: ", $scope.counter);
     }
 
 }]);
-
-
 
 
 

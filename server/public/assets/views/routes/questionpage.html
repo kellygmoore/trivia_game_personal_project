@@ -28,8 +28,7 @@
                     <p ng-hide="trueOrFalse" id="showNumberCorrect">{{counter}}/5 are in the correct order</p><br><br>
 
                     <h4 ng-hide="showNextArrow" class="animated tada">inOrder Success!</h4>
-                    <div ng-hide="showNextArrow" id="showNextArrow"><button ng-click="playCategory()">Next Question<img src="assets/views/nextarrow.png" alt="next arrow"</button></div>
-
+                    <div ng-hide="showNextArrow" id="showNextArrow"><button ng-click="playCategory(trivia[nextCatObjectIndex])">Next Question<img src="assets/views/nextarrow.png" alt="next arrow"</button></div>
             </div>
 
             <div class="container-fluid col-md-3">  <!--col-md-offset-1-->
