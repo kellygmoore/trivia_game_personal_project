@@ -12,6 +12,43 @@ myApp.factory('ShareData', ["$http", function($http){
         return promise;
     };
 
+    var play = function(catData){
+    //console.log("Play function here is catData: ", catData);
+        var answerArray =  [
+            {ans: catData.ans1, id: 1},
+            {ans: catData.ans2, id: 2},
+            {ans: catData.ans3, id: 3},
+            {ans: catData.ans4, id: 4},
+            {ans: catData.ans5, id: 5}
+        ];
+
+        //send back category data
+        categoryToPlay = {
+            idNum: catData.id,
+            category: catData.category,
+            points: catData.points,
+            difficulty: catData.difficulty,
+            question: catData.question,
+            randomAnswerArray: shuffleArray(answerArray),
+            solutionArray: [catData.sol1, catData.sol2, catData.sol3, catData.sol4, catData.sol5]
+        };
+        console.log("In factory in playCategory, here is categoryToPlay: ", categoryToPlay);
+        //return categoryToPlay;
+
+        //put answers in random order
+        function shuffleArray(array) {
+            //console.log("passed in array: ", array);
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+        return categoryToPlay;
+    };
+
     //PUBLIC
     var publicData = {
         retrieveData: function(){
@@ -24,39 +61,10 @@ myApp.factory('ShareData', ["$http", function($http){
             return categoryToPlay;
         },
         playCategory: function(catData){
+            //console.log("In playCategory, here is object:", catData);
+            return play(catData);
         //console.log("In factory in playCategory, here is catData as passed in: ", catData);
-            var answerArray =  [
-                {ans: catData.ans1, id: 1},
-                {ans: catData.ans2, id: 2},
-                {ans: catData.ans3, id: 3},
-                {ans: catData.ans4, id: 4},
-                {ans: catData.ans5, id: 5}
-            ];
 
-            //send back category data
-            categoryToPlay = {
-                idNum: catData.id,
-                category: catData.category,
-                points: catData.points,
-                difficulty: catData.difficulty,
-                question: catData.question,
-                randomAnswerArray: shuffleArray(answerArray),
-                solutionArray: [catData.sol1, catData.sol2, catData.sol3, catData.sol4, catData.sol5]
-            };
-            console.log("In factory in playCategory, here is categoryToPlay: ", categoryToPlay);
-
-
-            //put answers in random order
-            function shuffleArray(array) {
-                //console.log("passed in array: ", array);
-                for (var i = array.length - 1; i > 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
-                    var temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
-                return array;
-            }
         }
     };
 

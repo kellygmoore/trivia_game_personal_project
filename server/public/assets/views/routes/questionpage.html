@@ -8,7 +8,7 @@
                 <p>{{catObject.category}}</p>
             </div>
             <div id="pointsDifficultyDiv" class="col-md-2">
-                <p>Points <span class="ptsSpan">{{points}}</span></p>
+                <p>Points <span class="ptsSpan">{{catObject.points}}</span></p>
                 <p>Difficulty <span id="diffSpan">{{catObject.difficulty}}</span></p>
             </div>
         </div>
@@ -28,12 +28,12 @@
                     <p ng-hide="trueOrFalse" id="showNumberCorrect">{{counter}}/5 are in the correct order</p><br><br>
 
                     <h4 ng-hide="showNextArrow" class="animated tada">inOrder Success!</h4>
-                    <div ng-hide="showNextArrow" id="showNextArrow"><button ng-click="playCategory(trivia[nextCatObjectIndex])">Next Question<img src="assets/views/nextarrow.png" alt="next arrow"</button></div>
+                    <div ng-hide="showNextArrow" id="showNextArrow"><button ng-click="nextQuestion(trivia[nextCatObjectIndex])">Next Question<img src="assets/views/nextarrow.png" alt="next arrow"></button></div>
             </div>
 
             <div class="container-fluid col-md-3">  <!--col-md-offset-1-->
-                <ul ng-model="randomAnswerArray" as-sortable="sortableOptions" is-disabled="!showNextArrow">
-                    <li ng-repeat="answer in randomAnswerArray" as-sortable-item class="as-sortable-item answerBlocks">
+                <ul ng-model="catObject.randomAnswerArray" as-sortable="sortableOptions" is-disabled="!showNextArrow">
+                    <li ng-repeat="answer in catObject.randomAnswerArray" as-sortable-item class="as-sortable-item answerBlocks">
                         <div as-sortable-item-handle class="as-sortable-item-handle sortElement" style="height:50px">
                             <span data-ng-bind="answer.ans"></span>
                         </div>
@@ -42,8 +42,8 @@
             </div>
 
         <div class="col-md-2" ng-hide="showNextArrow">
-            <ul ng-model="solutionArray">
-                <li ng-repeat="solution in solutionArray" class="solutionBlocks">
+            <ul ng-model="catData.solutionArray">
+                <li ng-repeat="solution in catData.solutionArray" class="solutionBlocks">
                     <div class="solutionDiv animated slideInLeft">
                         <span>--- {{solution}}</span>
                     </div>
