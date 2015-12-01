@@ -1,6 +1,7 @@
 myApp.factory('ShareData', ["$http", function($http){
     var data = undefined;
     var categoryToPlay = {};
+    var newCat = {};
     console.log("In Factory");
 
     //PRIVATE
@@ -32,7 +33,7 @@ myApp.factory('ShareData', ["$http", function($http){
             randomAnswerArray: shuffleArray(answerArray),
             solutionArray: [catData.sol1, catData.sol2, catData.sol3, catData.sol4, catData.sol5]
         };
-        console.log("In factory in playCategory, here is categoryToPlay: ", categoryToPlay);
+        //console.log("In factory in playCategory, here is categoryToPlay: ", categoryToPlay);
         //return categoryToPlay;
 
         //put answers in random order
@@ -49,6 +50,15 @@ myApp.factory('ShareData', ["$http", function($http){
         return categoryToPlay;
     };
 
+    //var newCat = function(points, newCategory){
+    //    newCatObject = {
+    //        totPts: points,
+    //        cat: newCategory
+    //    };
+    //    console.log("In factory newCatObject: ", newCatObject);
+    //    return newCatObject;
+    //};
+
     //PUBLIC
     var publicData = {
         retrieveData: function(){
@@ -64,7 +74,13 @@ myApp.factory('ShareData', ["$http", function($http){
             //console.log("In playCategory, here is object:", catData);
             return play(catData);
         //console.log("In factory in playCategory, here is catData as passed in: ", catData);
-
+        },
+        getNewCat: function(){
+            return newCat;
+        },
+        newCategory: function(points, categoryName){
+            newCat = {totPts: points, cat: categoryName};
+            console.log("In factory, newCat: ", newCat);
         }
     };
 

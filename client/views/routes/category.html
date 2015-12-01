@@ -3,7 +3,7 @@
             <div id="logoDiv" class="col-md-2">
                 <img src="/assets/views/Drawing.png" alt="logo">
             </div>
-            <div id="categoryTitleDiv" class="col-md-6">
+            <div id="categoryTitleDiv" class="col-md-7">
                 <p>Choose A Category</p>
             </div>
             <div id="pointsDifficultyDiv" class="col-md-2">
@@ -18,7 +18,7 @@
             <div class="col-md-10">
                 <div ng-repeat="cat in trivia" ng-if="cat.category != null">
                     <h3 class="animated rotateIn"><a ng-click="playCategory(cat)" href="#questionpage">
-                        <img src="/assets/views/passCat.png" ng-hide="true" alt="Category completed">{{cat.category}}</a></h3>
+                        <img src="/assets/views/passCat.png" ng-hide="showRibbon" alt="Category completed">{{cat.category}}</a></h3>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<div ng-controller="MainCtrl" class="container">
+<div class="container">
     <div class="row">
         <div id="logoDiv" class="col-md-2">
             <img src="/assets/views/Drawing.png" alt="logo">
@@ -17,8 +17,8 @@
             <div class="col-md-10 messageDiv categoryListDiv">
                 <h2 class="animated tada">Congratulations!</h2>
                 <div>
-                    <h3><span id="orange">(Name variable)</span>, you passed the <span id="green">{{catObject.category}}</span> category and<br>
-                    earned <span class="ptsSpan">{{catObject.points}}</span> points!</h3>
+                    <h3><span id="orange">(Name variable)</span>, you passed the <span id="green">{{completionObject.cat}}</span> category and<br>
+                    earned <span class="ptsSpan">{{completionObject.totPts}}</span> points!</h3>
                 </div>
             </div>
         </div>

@@ -5,7 +5,8 @@ var myApp = angular.module("myApp", ['as.sortable', 'ngRoute']);
     myApp.config(["$routeProvider", function($routeProvider){
     $routeProvider.
         when('/start', {
-            templateUrl: "assets/views/routes/start.html"
+            templateUrl: "assets/views/routes/start.html",
+            controller: "InstructionsCtrl"
         }).
         when('/login', {
             templateUrl: "assets/views/routes/login.html"
