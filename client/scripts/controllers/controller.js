@@ -10,7 +10,7 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     var havePointsHere = 0;
     var catTitle;
 
-    $scope.showRibbon = true;
+    //$scope.showRibbon = false;
     $scope.trueOrFalse = true;
     $scope.showNextArrow = true;
     $scope.showNextCatArrow = true;
@@ -18,7 +18,6 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     $scope.showSolution = true;
     $scope.disableAnswers = false;
     $scope.noPointsMsg = true;
-    $scope.disableCat = false;
 
     $scope.catPlayed = "";
     $scope.trivia = [];
@@ -41,9 +40,12 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     $scope.catObject = $scope.shareData.getCategory();
     //console.log("CatObject1: ", $scope.catObject);
 
+
     //talk to factory to get shared data and load first question in category/////////////////////
     $scope.playCategory = function(newValue){
         $location.path('/questionpage');
+        newValue.disabled = true;
+        newValue.showRibbon = true;
         $scope.shareData.playCategory(newValue);
     };
 
@@ -139,7 +141,7 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     $scope.totPts = $scope.completionObject.totPts + lastPts;
     //console.log("scope completionObject after getting shared data ", $scope.completionObject);
 
-    //click to play another category - resets page////////////////////////////////////
+    //click to play another category - resets category page////////////////////////////////////
     //console.log("scope.showribbon: ", $scope.showRibbon);
     $scope.updateCatPage = function(runningTotalPts, kittyName){
         //console.log("In updateCatPage catTitle: ", catTitle);
@@ -148,11 +150,9 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     };
     $scope.newCatValues = $scope.shareData.getUpdateCatPage();
 
-    console.log("var catTitle: ", $scope.category + ", scope.newCatValues.catPlayed: ", $scope.newCatValues.catPlayed);
-    if($scope.category === $scope.newCatValues.cat){
-        $scope.disableCat = true;
-        $scope.showRibbon = false;
-    }
+    //console.log("var catTitle: ", $scope.category + ", scope.newCatValues.catPlayed: ", $scope.newCatValues.catPlayed);
+
+
 
 
 

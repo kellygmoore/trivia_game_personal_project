@@ -86,11 +86,11 @@ myApp.factory('ShareData', ["$http", function($http){
             //console.log("In factory, newCat: ", newCat);
         },
         getUpdateCatPage: function(){
-            console.log("In factory, getUpdateCatPage, here is updateVals: ", updateVals);
+            //console.log("In factory, getUpdateCatPage, here is updateVals: ", updateVals);
             return updateVals;
         },
         updateCat: function(runPts, cName){
-            console.log("In factory, updateCat function: ", runPts, cName);
+            //console.log("In factory, updateCat function: ", runPts, cName);
             return update(runPts, cName);
         }
     };
