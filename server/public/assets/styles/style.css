@@ -2,8 +2,6 @@
 body {
     font-family: 'Fredoka One', Arial, sans-serif;
     background-color: darkblue;
-    /*background-image: url("/assets/views/blue2.jpg");*/
-    /*background-repeat: no-repeat;*/
 }
 
 .bigDiv {
@@ -18,17 +16,13 @@ body {
     margin: 20px auto 0 auto;
 }
 
-/*.gameDiv {*/
-    /*height: 450px;*/
-/*}*/
-
 #middle {
     margin-top: 20px;
     text-align: center;
 }
 
 .headerDiv {
-    border-bottom: 5px ridge black;
+    border-bottom: 4px solid black;
     height: 5px;
 }
 
@@ -52,8 +46,6 @@ h3 img {
     border-radius: 5px;
     list-style: none;
     color: white;
-    /*padding-top: 7px;*/
-    /*vertical-align: middle;*/
     text-align: center;
 }
 
@@ -91,8 +83,6 @@ h3 img {
     background: none!important;
     border: none;
     padding: 0!important;
-
-    /*optional*/
     color: #069;
     cursor: pointer;
 }
@@ -153,7 +143,7 @@ h3 img {
 }
 
 #diffSpan {
-    color: purple;
+    color: darkgreen;
 }
 
 #green {

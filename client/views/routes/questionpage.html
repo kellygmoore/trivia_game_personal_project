@@ -1,5 +1,4 @@
-
-    <div class="container">
+<div class="container-fluid">
         <div class="row">
             <div id="logoDiv" class="col-md-2">
                 <img src="/assets/views/Drawing.png" alt="logo">
@@ -16,7 +15,7 @@
             <div class="col-md-11 headerDiv">
             </div>
         </div>
-    </div>
+</div>
 
     <div class="mainBody">
         <div class="gameDiv row">
@@ -29,7 +28,7 @@
 
             </div>
 
-            <div class="container-fluid col-md-3">  <!--col-md-offset-1-->
+            <div class="container-fluid col-md-3">
                 <ul ng-model="catObject.randomAnswerArray" as-sortable="sortableOptions" is-disabled="disableAnswers">
                     <li ng-repeat="answer in catObject.randomAnswerArray" as-sortable-item class="as-sortable-item answerBlocks">
                         <div as-sortable-item-handle class="as-sortable-item-handle sortElement">

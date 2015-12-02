@@ -10,7 +10,7 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     var havePointsHere = 0;
     var catTitle;
 
-    //$scope.showRibbon = false;
+    //set booleans for ng-hide
     $scope.trueOrFalse = true;
     $scope.showNextArrow = true;
     $scope.showNextCatArrow = true;
@@ -53,9 +53,9 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     $scope.category = catTitle;
     $scope.catPoints = $scope.catObject.points;
 
-    //on click of the Check Order button, do this
+    //on click of the Check Order button, do this///////////////////////////////////
     $scope.checkAnswers = function() {
-        //console.log("In checkAnswers catTitle: ", catTitle);
+
         $scope.counter = 0;
         $scope.trueOrFalse = false;
         //check to see if the answers are ordered correctly by looping through each
@@ -72,7 +72,7 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
             //console.log("catCounter: ", catCounter);
             $scope.showNextArrow = false;
 
-            //once all 5 questions have been played, ask to play new category
+            //once all 5 questions have been played, ask to play new category/////////////
             if(catCounter === 5){
                 $scope.showNextArrow = true;
                 $scope.showNextCatArrow = false;
@@ -81,16 +81,17 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
             $scope.showSuccessMsg = false;
             $scope.showSolution = false;
             $scope.nextCatObjectIndex = $scope.catObject.idNum;
-            //console.log("next question button index: ", $scope.nextCatObjectIndex);
 
-            //else if the answers are NOT ordered correctly subtract points
+            //else if the answers are NOT ordered correctly subtract points//////////////////
         } else {
             $scope.catPoints -= 50;
             havePointsHere = $scope.catPoints;
-            //console.log("Points total here after click:", havePointsHere);
+
+            //if you have 0 points you must move on to next question////////////////////////
             if(havePointsHere === 0){
-                //if no points left, must go on to next question
+
                 //console.log("scope.catPoints after click check answers button: ", $scope.catPoints);
+                //reset the page view////////////////////
                 $scope.noPointsMsg = false;
                 $scope.showSolution = false;
                 $scope.disableAnswers = true;
@@ -103,63 +104,49 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
         }
 
 
-        //console.log("The counter is at: ", $scope.counter);
-
-        //on click of the next arrow after correctly ordered
+        //on click of the next arrow after correctly ordered//////////////////////////////
         $scope.nextQuestion = function(next){
 
-            //console.log("In nextQuestion catTitle: ", catTitle);
             lastPts = $scope.catPoints;
             $scope.totalPoints += $scope.catPoints;
             //console.log("Total Points: ", $scope.totalPoints);
-            //get shared data to set up new catObject
+
+            //get shared data to set up new catObject//////////////////////////
             $scope.catObject = $scope.shareData.playCategory(next);
             //make sure category title doesn't change (in db, it is null)
             $scope.category = catTitle;
 
             $scope.catPoints = $scope.catObject.points;
-            //hide the next arrow
-
+            //set the new view//////////
             $scope.noPointsMsg = true;
             $scope.showSuccessMsg = true;
             $scope.disableAnswers = false;
             $scope.showSolution = true;
             $scope.trueOrFalse = true;
             $scope.showNextArrow = true;
-            //console.log("CatObject-Next: ", $scope.catObject);
         };
-
-
     };
-    //when completed category, set points total and category name to display on page
+    //when completed category, set points total and category name to display on page//////////////////////
     $scope.playNewCat = function(pts, cat){
-        //console.log("In playNewCat catTitle: ", catTitle);
         $scope.shareData.newCategory(pts, cat);
     };
-    //$scope.showRibbon = false;
+
     $scope.completionObject = $scope.shareData.getNewCat();
+
+    //calculate total category points to show back on completion page/////////
     $scope.totPts = $scope.completionObject.totPts + lastPts;
-    //console.log("scope completionObject after getting shared data ", $scope.completionObject);
+
 
     //click to play another category - resets category page////////////////////////////////////
-    //console.log("scope.showribbon: ", $scope.showRibbon);
     $scope.updateCatPage = function(runningTotalPts, kittyName){
-        //console.log("In updateCatPage catTitle: ", catTitle);
-        //console.log("In controller function updateCatPage!", runningTotalPts, badge, kittyName);
         $scope.shareData.updateCat(runningTotalPts, kittyName);
     };
     $scope.newCatValues = $scope.shareData.getUpdateCatPage();
 
-    //console.log("var catTitle: ", $scope.category + ", scope.newCatValues.catPlayed: ", $scope.newCatValues.catPlayed);
+}]);        //end of MainCtrl controller///////////////////////////////////////
 
 
-
-
-
-}]);
-
-
-
+//controller only function to show instructions when clicked//////////
 myApp.controller('InstructionsCtrl', ["$scope", function($scope) {
 
     $scope.flip = true;
@@ -169,3 +156,5 @@ myApp.controller('InstructionsCtrl', ["$scope", function($scope) {
     };
 
 }]);
+
+///////////////////////THE END///////////////////////////////////
