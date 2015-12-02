@@ -7,7 +7,7 @@
                 <p>Choose A Category</p>
             </div>
             <div id="pointsDifficultyDiv" class="col-md-2">
-                <p>Total Points <span id="ptsSpan">###</span></p>
+                <p>Total Points <span class="ptsSpan">{{newCatValues.runningTotal}}</span></p>
             </div>
         </div>
         <div class="row">
@@ -15,10 +15,10 @@
         </div>
 
         <div class="categoryListDiv row">
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div ng-repeat="cat in trivia" ng-if="cat.category != null">
-                    <h3 class="animated rotateIn"><a ng-click="playCategory(cat)" href="#questionpage">
-                        <img src="/assets/views/passCat.png" ng-hide="showRibbon" alt="Category completed">{{cat.category}}</a></h3>
+                    <h3 class="animated rotateIn"><button ng-click="playCategory(cat)" ng-disable="false" class="linkButton">
+                        <img ng-hide="true" src="/assets/views/passCat.png" alt="Category completed">{{cat.category}}</button></h3>
                 </div>
             </div>
         </div>

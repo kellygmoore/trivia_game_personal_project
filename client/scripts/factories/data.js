@@ -2,6 +2,9 @@ myApp.factory('ShareData', ["$http", function($http){
     var data = undefined;
     var categoryToPlay = {};
     var newCat = {};
+    var updateVals = {};
+    var runningTot = 0;
+
     console.log("In Factory");
 
     //PRIVATE
@@ -50,14 +53,14 @@ myApp.factory('ShareData', ["$http", function($http){
         return categoryToPlay;
     };
 
-    //var newCat = function(points, newCategory){
-    //    newCatObject = {
-    //        totPts: points,
-    //        cat: newCategory
-    //    };
-    //    console.log("In factory newCatObject: ", newCatObject);
-    //    return newCatObject;
-    //};
+    var update = function(runPts, cName){
+        //console.log("In factory, runPts from page: ", runPts);
+        runningTot += runPts;
+        //console.log("In factory, runningTot: ", runningTot);
+        updateVals = {runningTotal: runningTot, catPlayed: cName};
+        return updateVals;
+    };
+
 
     //PUBLIC
     var publicData = {
@@ -80,7 +83,15 @@ myApp.factory('ShareData', ["$http", function($http){
         },
         newCategory: function(points, categoryName){
             newCat = {totPts: points, cat: categoryName};
-            console.log("In factory, newCat: ", newCat);
+            //console.log("In factory, newCat: ", newCat);
+        },
+        getUpdateCatPage: function(){
+            console.log("In factory, getUpdateCatPage, here is updateVals: ", updateVals);
+            return updateVals;
+        },
+        updateCat: function(runPts, cName){
+            console.log("In factory, updateCat function: ", runPts, cName);
+            return update(runPts, cName);
         }
     };
 

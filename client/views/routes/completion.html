@@ -3,29 +3,29 @@
         <div id="logoDiv" class="col-md-2">
             <img src="/assets/views/Drawing.png" alt="logo">
         </div>
-        <div id="categoryTitleDiv" class="col-md-6">
+        <div id="categoryTitleDiv" class="col-md-7">
             <p>Category Complete</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-10 headerDiv">
+        <div class="col-md-11 headerDiv">
         </div>
     </div>
 
     <div class="mainBody">
         <div class="row">
-            <div class="col-md-10 messageDiv categoryListDiv">
+            <div class="col-md-11 messageDiv categoryListDiv">
                 <h2 class="animated tada">Congratulations!</h2>
                 <div>
                     <h3><span id="orange">(Name variable)</span>, you passed the <span id="green">{{completionObject.cat}}</span> category and<br>
-                    earned <span class="ptsSpan">{{completionObject.totPts}}</span> points!</h3>
+                    earned <span class="ptsSpan">{{totPts}}</span> points!</h3>
                 </div>
             </div>
         </div>
 
         <div class="loginOrRegisterDiv row">
-            <div class="col-md-3 col-md-offset-1">
-                <h3><a href="#category">Choose A New Category</a></h3>
+            <div class="col-md-4 col-md-offset-1">
+                <h3><a href="#category" ng-click="updateCatPage(totPts, completionObject.cat)">Choose A New Category</a></h3>
             </div>
             <div class="col-md-4 col-md-offset-2">
                 <h3><a href="#start">Go Home</a></h3>

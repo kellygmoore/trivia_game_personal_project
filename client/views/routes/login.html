@@ -3,27 +3,27 @@
         <div id="logoDiv" class="col-md-2">
             <img src="/assets/views/Drawing.png" alt="logo">
         </div>
-        <div id="categoryTitleDiv" class="col-md-6">
+        <div id="categoryTitleDiv" class="col-md-7">
             <p>Login</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-10 headerDiv">
+        <div class="col-md-11 headerDiv">
         </div>
     </div>
 
     <div class="mainBody">
-        <form>
+        <form method="POST" action="/login">
             <div class="formDiv">
-                <label for="username"><h3>username: </h3></label>
-                <input type="text" id="username" name="username" size="50">
+                <label for="username"><h3>Username: </h3></label>
+                <input type="text" id="username" name="username" size="50" required autofocus>
             </div>
             <div class="formDiv">
-                <label for="password"><h3>password: </h3></label>
-                <input type="text" id="password" name="password" size="50">
+                <label for="password"><h3>Password: </h3></label>
+                <input type="text" id="password" name="password" size="50" required>
             </div>
             <div class="formDiv">
-                <button ng-click="loginToPlay()" class="buttonClass">Submit</button>
+                <button class="buttonClass" type="submit">Log In</button>
             </div>
         </form>
     </div>
