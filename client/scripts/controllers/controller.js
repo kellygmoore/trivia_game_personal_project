@@ -149,11 +149,17 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
 //controller only function to show instructions when clicked//////////
 myApp.controller('InstructionsCtrl', ["$scope", function($scope) {
 
+    //hide elements
     $scope.flip = true;
+    $scope.showCredits = true;
 
     $scope.showInstructions = function(){
         $scope.flip = !$scope.flip;
     };
+
+    $scope.showLogoCredits = function(){
+        $scope.showCredits = !$scope.showCredits;
+    }
 
 }]);
 
