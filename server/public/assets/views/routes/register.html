@@ -1,4 +1,28 @@
-<div class="container-fluid">
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>inOrder</title>
+    <!--styles -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+    <link rel="stylesheet" type="text/css" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/animate.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/ng-sortable.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/ng-sortable.style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+
+    <!--scripts-->
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendors/ng-sortable.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/factories/data.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/controllers/controller.min.js"></script>
+
+</head>
+
+<body>
+<div class="well bigDiv">
+    <div class="container-fluid">
     <div class="row">
         <div id="logoDiv" class="col-md-2">
             <img src="/assets/views/Drawing.png" alt="logo">
@@ -12,35 +36,72 @@
         </div>
     </div>
 
-    <div class="mainBody">
+    <div ng-controller="AccountCtrl" class="mainBody">
         <form method="POST" action="/register">
             <h3>Create a Player Account</h3>
             <div class="formDiv">
-                <label for="firstnamePlayer"><h3>First Name: </h3></label>
-                <input type="text" id="firstnamePlayer" name="namePlayer" size="50" required autofocus>
-            </div>
-            <div class="formDiv">
-                <label for="lastnamePlayer"><h3>Last Name: </h3></label>
-                <input type="text" id="lastnamePlayer" name="namePlayer" size="50" required autofocus>
-            </div>
-            <div class="formDiv">
-                <label for="emailPlayer"><h3>Email Address: </h3></label>
-                <input type="email" id="emailPlayer" name="emailPlayer" size="50" required>
-            </div>
-            <div class="formDiv">
-                <label for="username"><h3>Username: </h3></label>
-                <input type="text" id="username" name="username" size="50" required>
-            </div>
-            <div class="formDiv">
-                <label for="passwordinput"><h3>Password: </h3></label>
-                <input type="password" id="passwordinput" name="password" size="50" required><br><br>
-                <label for="passwordinput2"><h3>Repeat password: </h3></label>
-                <input type="password" id="passwordinput2" name="password2" size="50" required>
-            </div>
-            <div class="formDiv">
+                <label for="firstname"><h4>First Name: </h4></label>
+                <input type="text"
+                       id="firstname"
+                       name="firstname"
+                       size="50"
+                       ng-model="firstname"
+                       required
+                       autofocus/><br>
+            <!--</div>-->
+            <!--<div class="formDiv">-->
+                <label for="lastname"><h4>Last Name: </h4></label>
+                <input type="text"
+                       id="lastname"
+                       name="lastname"
+                       size="50"
+                       ng-model="lastname"
+                       required/><br>
+            <!--</div>-->
+            <!--<div class="formDiv">-->
+                <label for="email"><h4>Email Address: </h4></label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       size="50"
+                       ng-model="email"
+                       required/><br>
+            <!--</div>-->
+            <!--<div class="formDiv">-->
+                <label for="username"><h4>Username: </h4></label>
+                <input type="text"
+                       id="username"
+                       name="username"
+                       ng-model="username"
+                       size="50"
+                       ng-unique="{key: 'users', property: 'username'}"
+                       required/><br>
+            <!--</div>-->
+            <!--<div class="formDiv">-->
+                <label for="password"><h4>Password: </h4></label>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       size="50"
+                       ng-model="password"
+                       required/><br>
+            <!--</div>-->
+            <!--<div class="formDiv">-->
+                <label for="password2"><h4>Re-type Password: </h4></label>
+                <input type="password"
+                       id="password2"
+                       name="password2"
+                       size="50"
+                       ng-model="password2"
+                       required password-match="password"/><br><br>
+            <!--</div>-->
+            <!--<div class="formDiv">-->
                 <button type="submit" class="buttonClass">Register</button>
             </div>
         </form>
     </div>
 
+    </div>
 </div>
+</body>
+</html>

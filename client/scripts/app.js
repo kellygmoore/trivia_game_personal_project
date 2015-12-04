@@ -9,10 +9,12 @@ var myApp = angular.module("myApp", ['as.sortable', 'ngRoute']);
             controller: "InstructionsCtrl"
         }).
         when('/login', {
-            templateUrl: "assets/views/routes/login.html"
+            templateUrl: "assets/views/routes/login.html",
+            controller: "AccountCtrl"
         }).
         when('/register', {
-            templateUrl: "assets/views/routes/register.html"
+            templateUrl: "assets/views/routes/register.html",
+            controller: "AccountCtrl"
         }).
         when('/category', {
             templateUrl: "assets/views/routes/category.html",
