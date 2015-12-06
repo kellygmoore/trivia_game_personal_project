@@ -6,9 +6,9 @@ body {
 
 .bigDiv {
     background-color: white;
-    width: 80%;
-    margin: 40px auto 0 auto;
-    border: 8px ridge red;
+    /*width: 85%;*/
+    margin: 40px 30px 0 30px;
+    border: 10px ridge red;
     border-radius: 20px;
 }
 
@@ -17,8 +17,9 @@ body {
 }
 
 #middle {
-    margin-top: 20px;
+    margin-top: 15px;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .headerDiv {
@@ -112,16 +113,17 @@ h3 img {
     font-size: 22px;
 }
 
-#pointsDifficultyDiv {
+.pointsDifficultyDiv {
     text-align: right;
     margin-top: 15px;
     height: 85px;
 }
 
-#categoryTitleDiv {
+.categoryTitleDiv {
+    margin-top: 10px;
     font-size: 48px;
     text-align: center;
-    height: 100px;
+    height: 90px;
     text-shadow:
     -1px -1px 0 gold,
     1px -1px 0 gold,
@@ -134,8 +136,10 @@ h3 img {
     height: auto;
 }
 
-#logoDiv {
+.logoDiv {
     height: 100px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .ptsSpan {
@@ -166,7 +170,6 @@ h3 img {
 
 .showNextArrow {
     text-align: right;
-    /*height: auto;*/
     display: block;
     float: right;
 }
@@ -181,13 +184,12 @@ h3 img {
 }
 
 .bigLogoDiv {
-    margin: auto;
-    width: 30%;
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 260px
 }
 
 #instructions {
-    margin: 40px auto;
-    width: 80%;
     text-align: center;
 }
 
@@ -198,10 +200,10 @@ h3 img {
 
 .formDiv {
     margin-left: 40px;
-    /*width: 80%;*/
-    /*display: block;*/
 }
 
 #logoCredit {
     font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }

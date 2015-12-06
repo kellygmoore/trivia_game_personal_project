@@ -1,18 +1,18 @@
-<div class="container-fluid">
+<div class="mainBody container-fluid">
         <div class="row">
-            <div id="logoDiv" class="col-md-2">
+            <div class="logoDiv col-md-2">
                 <img src="/assets/views/Drawing.png" alt="logo">
             </div>
-            <div id="categoryTitleDiv" class="col-md-7">
+            <div class="categoryTitleDiv col-md-7">
                 <p>{{category}}</p>
             </div>
-            <div id="pointsDifficultyDiv" class="col-md-2">
+            <div class="pointsDifficultyDiv col-md-2">
                 <p>Points <span class="ptsSpan">{{catPoints}}/{{catObject.points}}</span></p>
                 <p>Difficulty <span id="diffSpan">{{catObject.difficulty}}</span></p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-11 headerDiv">
+            <div class="col-md-12 headerDiv">
             </div>
         </div>
 </div>
@@ -47,6 +47,7 @@
                 </li>
             </ul>
         </div>
+
         </div>
         <div class="row">
             <div ng-hide="showNextArrow" class="showNextArrow col-md-11"><a href="" ng-click="nextQuestion(trivia[nextCatObjectIndex])">Next Question
