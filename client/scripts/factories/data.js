@@ -19,11 +19,11 @@ myApp.factory('ShareData', ["$http", function($http){
     var play = function(catData){
 
         var answerArray =  [
-            {ans: catData.ans1, id: 1},
-            {ans: catData.ans2, id: 2},
-            {ans: catData.ans3, id: 3},
-            {ans: catData.ans4, id: 4},
-            {ans: catData.ans5, id: 5}
+            {ans: catData.ans1, id: 1, sol: catData.sol1},
+            {ans: catData.ans2, id: 2, sol: catData.sol2},
+            {ans: catData.ans3, id: 3, sol: catData.sol3},
+            {ans: catData.ans4, id: 4, sol: catData.sol4},
+            {ans: catData.ans5, id: 5, sol: catData.sol5}
         ];
 
         //send back category data///////////////////
@@ -33,8 +33,8 @@ myApp.factory('ShareData', ["$http", function($http){
             points: catData.points,
             difficulty: catData.difficulty,
             question: catData.question,
-            randomAnswerArray: shuffleArray(answerArray),
-            solutionArray: [catData.sol1, catData.sol2, catData.sol3, catData.sol4, catData.sol5]
+            randomAnswerArray: shuffleArray(answerArray)
+            //solutionArray: [catData.sol1, catData.sol2, catData.sol3, catData.sol4, catData.sol5]
         };
         //console.log("In factory in playCategory, here is categoryToPlay: ", categoryToPlay);
 

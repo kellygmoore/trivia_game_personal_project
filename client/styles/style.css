@@ -156,6 +156,11 @@ h3 img {
 
 .showNumberCorrect {
     margin-top: 20px;
+    color: darkgreen;
+}
+
+.showNumberCorrect2 {
+    margin-top: 20px;
     color: red;
 }
 

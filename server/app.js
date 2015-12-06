@@ -1,6 +1,5 @@
 var express = require("express");
 var app = express();
-//var pg = require('pg');
 var bodyParser = require('body-parser');
 var passport = require('./strategies/user');
 var session = require('express-session');

@@ -23,7 +23,7 @@
                 <h1 class="animated fadeInLeft">{{catObject.question}}</h1>
                 <button class="buttonClass animated bounceInUp" ng-disabled="disableAnswers" ng-click="checkAnswers()">Check Order</button><br>
                 <p ng-hide="trueOrFalse" class="showNumberCorrect animated infinite pulse">{{counter}}/5 are in the correct order</p>
-                <p ng-hide="noPointsMsg" class="showNumberCorrect animated infinite pulse">Sorry! <br>You are out of points for this question!</p>
+                <p ng-hide="noPointsMsg" class="showNumberCorrect2 animated infinite pulse">Sorry! <br>You are out of points for this question!</p>
                 <h4 ng-hide="showSuccessMsg" class="animated tada">inOrder Success!</h4>
 
             </div>
@@ -39,10 +39,10 @@
             </div>
 
         <div class="col-md-3" ng-hide="showSolution">
-            <ul ng-model="catObject.solutionArray">
-                <li ng-repeat="solution in catObject.solutionArray" class="solutionBlocks">
+            <ul ng-model="randomArray">
+                <li ng-repeat="solution in randomArray" class="solutionBlocks">
                     <div class="solutionDiv animated flipInX">
-                        <span> --- {{solution}}</span>
+                        <span> --- {{solution.sol}}</span>
                     </div>
                 </li>
             </ul>

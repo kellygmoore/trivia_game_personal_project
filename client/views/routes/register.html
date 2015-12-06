@@ -48,8 +48,7 @@
                        ng-model="firstname"
                        required
                        autofocus/><br>
-            <!--</div>-->
-            <!--<div class="formDiv">-->
+
                 <label for="lastname"><h4>Last Name: </h4></label>
                 <input type="text"
                        id="lastname"
@@ -57,8 +56,7 @@
                        size="50"
                        ng-model="lastname"
                        required/><br>
-            <!--</div>-->
-            <!--<div class="formDiv">-->
+
                 <label for="email"><h4>Email Address: </h4></label>
                 <input type="email"
                        id="email"
@@ -66,8 +64,7 @@
                        size="50"
                        ng-model="email"
                        required/><br>
-            <!--</div>-->
-            <!--<div class="formDiv">-->
+
                 <label for="username"><h4>Username: </h4></label>
                 <input type="text"
                        id="username"
@@ -76,26 +73,15 @@
                        size="50"
                        ng-unique="{key: 'users', property: 'username'}"
                        required/><br>
-            <!--</div>-->
-            <!--<div class="formDiv">-->
+
                 <label for="password"><h4>Password: </h4></label>
                 <input type="password"
                        id="password"
                        name="password"
                        size="50"
                        ng-model="password"
-                       required/><br>
-            <!--</div>-->
-            <!--<div class="formDiv">-->
-                <label for="password2"><h4>Re-type Password: </h4></label>
-                <input type="password"
-                       id="password2"
-                       name="password2"
-                       size="50"
-                       ng-model="password2"
-                       required password-match="password"/><br><br>
-            <!--</div>-->
-            <!--<div class="formDiv">-->
+                       required/><br><br>
+
                 <button type="submit" class="buttonClass">Register</button>
             </div>
         </form>

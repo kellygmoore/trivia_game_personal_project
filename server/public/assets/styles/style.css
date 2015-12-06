@@ -156,6 +156,11 @@ h3 img {
 
 .showNumberCorrect {
     margin-top: 20px;
+    color: darkgreen;
+}
+
+.showNumberCorrect2 {
+    margin-top: 20px;
     color: red;
 }
 
@@ -192,9 +197,9 @@ h3 img {
 }
 
 .formDiv {
-    margin: 30px auto;
-    width: 80%;
-    display: block;
+    margin-left: 40px;
+    /*width: 80%;*/
+    /*display: block;*/
 }
 
 #logoCredit {

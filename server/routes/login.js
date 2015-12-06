@@ -3,8 +3,6 @@ var router = express.Router();
 var path = require('path');
 var passport = require('passport');
 
-//var auth = require('../modules/auth');
-
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/inorder_game_db';
 
 router.post('/',
@@ -21,13 +19,6 @@ router.get("/", function(req, res, next){
     console.log("Get: In login.js in router.get");
     res.sendFile(path.join(__dirname, "../public", '/assets/views/routes/login.html'));
 });
-
-
-
-//AUTHORIZED AREA
-//router.use('/*', auth);
-
-//RESTRICTED TO LOGIN
 
 
 module.exports = router;

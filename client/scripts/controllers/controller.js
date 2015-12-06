@@ -7,6 +7,7 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     //set variables
     var catCounter = 0;
     var lastPts = 0;
+    //var gameOverCounter = 0;
     var havePointsHere = 0;
     var catTitle;
 
@@ -18,6 +19,7 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     $scope.showSolution = true;
     $scope.disableAnswers = false;
     $scope.noPointsMsg = true;
+    //$scope.showGameOver = true;
 
     $scope.catPlayed = "";
     $scope.trivia = [];
@@ -52,9 +54,13 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     catTitle = $scope.catObject.category;
     $scope.category = catTitle;
     $scope.catPoints = $scope.catObject.points;
+    //console.log("GameOverCounter after clicking playcategory link: ", gameOverCounter);
 
     //on click of the Check Order button, do this///////////////////////////////////
     $scope.checkAnswers = function() {
+        $scope.randomArray = $scope.catObject.randomAnswerArray;
+        //console.log("catObject Array Order: ", $scope.randomArray);
+
 
         $scope.counter = 0;
         $scope.trueOrFalse = false;
@@ -99,6 +105,10 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
                 $scope.trueOrFalse = true;
                 $scope.showSuccessMsg = true;
                 catCounter++;
+                if(catCounter === 5){
+                    $scope.showNextArrow = true;
+                    $scope.showNextCatArrow = false;
+                }
                 $scope.nextCatObjectIndex = $scope.catObject.idNum;
             }
         }
@@ -106,7 +116,8 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
 
         //on click of the next arrow after correctly ordered//////////////////////////////
         $scope.nextQuestion = function(next){
-
+            //gameOverCounter++;
+            //console.log("GameOverCounter after clicking next question arrow: ", gameOverCounter);
             lastPts = $scope.catPoints;
             $scope.totalPoints += $scope.catPoints;
             //console.log("Total Points: ", $scope.totalPoints);
@@ -128,6 +139,8 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     };
     //when completed category, set points total and category name to display on page//////////////////////
     $scope.playNewCat = function(pts, cat){
+        //gameOverCounter++;
+        //console.log("GameOverCounter after clicking playNewcat arrow: ", gameOverCounter);
         $scope.shareData.newCategory(pts, cat);
     };
 
@@ -142,6 +155,10 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
         $scope.shareData.updateCat(runningTotalPts, kittyName);
     };
     $scope.newCatValues = $scope.shareData.getUpdateCatPage();
+    //console.log("gameover on catpage: ", + gameOverCounter +  ", trivia length: " + $scope.trivia.length);
+    //if(gameOverCounter === $scope.trivia.length){
+    //    $scope.showGameOver = false;
+    //}
 
 }]);        //end of MainCtrl controller///////////////////////////////////////
 
@@ -165,6 +182,11 @@ myApp.controller('InstructionsCtrl', ["$scope", function($scope) {
 
 //used for registering and logging in/////////////////////////////////////
 myApp.controller('AccountCtrl', ["$scope", function($scope){
+
+    $scope.playername = "";
+    console.log("username: ", $scope.playername);
+
+
 
     myApp.directive("ngUnique", ['AuthService', function(AuthService) {
         console.log("In myApp directive AccountCtrl");
