@@ -1,93 +1,93 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
-<head>
-    <title>inOrder</title>
-    <!--styles -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fredoka+One">
-    <link rel="stylesheet" type="text/css" href="/vendors/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/styles/animate.css">
-    <link rel="stylesheet" type="text/css" href="/vendors/ng-sortable.css">
-    <link rel="stylesheet" type="text/css" href="/vendors/ng-sortable.style.css">
-    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
+<!--<!DOCTYPE html>-->
+<!--<html ng-app="myApp">-->
+<!--<head>-->
+    <!--<title>inOrder</title>-->
+    <!--&lt;!&ndash;styles &ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Fredoka+One">-->
+    <!--<link rel="stylesheet" type="text/css" href="/vendors/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/assets/styles/animate.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/vendors/ng-sortable.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/vendors/ng-sortable.style.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="/assets/styles/style.css">-->
 
-    <!--scripts-->
-    <script type="text/javascript" src="/vendors/angular.min.js"></script>
-    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
-    <script type="text/javascript" src="/vendors/ng-sortable.js"></script>
-    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
-    <script type="text/javascript" src="/assets/scripts/factories/data.min.js"></script>
-    <script type="text/javascript" src="/assets/scripts/controllers/controller.min.js"></script>
+    <!--&lt;!&ndash;scripts&ndash;&gt;-->
+    <!--<script type="text/javascript" src="/vendors/angular.min.js"></script>-->
+    <!--<script type="text/javascript" src="/vendors/angular-route.min.js"></script>-->
+    <!--<script type="text/javascript" src="/vendors/ng-sortable.js"></script>-->
+    <!--<script type="text/javascript" src="/assets/scripts/app.min.js"></script>-->
+    <!--<script type="text/javascript" src="/assets/scripts/factories/data.min.js"></script>-->
+    <!--<script type="text/javascript" src="/assets/scripts/controllers/controller.min.js"></script>-->
 
-</head>
+<!--</head>-->
 
-<body>
-<div class="well bigDiv">
-    <div class="container-fluid">
-    <div class="row">
-        <div class="logoDiv col-md-2">
-            <img src="/assets/views/Drawing.png" alt="logo">
-        </div>
-        <div class="categoryTitleDiv col-md-7">
-            <p>Register</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 headerDiv">
-        </div>
-    </div>
+<!--<body>-->
+<!--<div class="well bigDiv">-->
+    <!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+        <!--<div class="logoDiv col-md-2">-->
+            <!--<img src="/assets/views/Drawing.png" alt="logo">-->
+        <!--</div>-->
+        <!--<div class="categoryTitleDiv col-md-7">-->
+            <!--<p>Register</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-12 headerDiv">-->
+        <!--</div>-->
+    <!--</div>-->
 
-    <div ng-controller="AccountCtrl" class="mainBody">
-        <form method="POST" action="/register">
-            <h3>Create a Player Account</h3>
-            <div class="formDiv">
-                <label for="firstname"><h4>First Name: </h4></label>
-                <input type="text"
-                       id="firstname"
-                       name="firstname"
-                       size="50"
-                       ng-model="firstname"
-                       required
-                       autofocus/><br>
+    <!--<div ng-controller="AccountCtrl" class="mainBody">-->
+        <!--<form method="POST" action="/register">-->
+            <!--<h3>Create a Player Account</h3>-->
+            <!--<div class="formDiv">-->
+                <!--<label for="firstname"><h4>First Name: </h4></label>-->
+                <!--<input type="text"-->
+                       <!--id="firstname"-->
+                       <!--name="firstname"-->
+                       <!--size="50"-->
+                       <!--ng-model="firstname"-->
+                       <!--required-->
+                       <!--autofocus/><br>-->
 
-                <label for="lastname"><h4>Last Name: </h4></label>
-                <input type="text"
-                       id="lastname"
-                       name="lastname"
-                       size="50"
-                       ng-model="lastname"
-                       required/><br>
+                <!--<label for="lastname"><h4>Last Name: </h4></label>-->
+                <!--<input type="text"-->
+                       <!--id="lastname"-->
+                       <!--name="lastname"-->
+                       <!--size="50"-->
+                       <!--ng-model="lastname"-->
+                       <!--required/><br>-->
 
-                <label for="email"><h4>Email Address: </h4></label>
-                <input type="email"
-                       id="email"
-                       name="email"
-                       size="50"
-                       ng-model="email"
-                       required/><br>
+                <!--<label for="email"><h4>Email Address: </h4></label>-->
+                <!--<input type="email"-->
+                       <!--id="email"-->
+                       <!--name="email"-->
+                       <!--size="50"-->
+                       <!--ng-model="email"-->
+                       <!--required/><br>-->
 
-                <label for="username"><h4>Username: </h4></label>
-                <input type="text"
-                       id="username"
-                       name="username"
-                       ng-model="username"
-                       size="50"
-                       ng-unique="{key: 'users', property: 'username'}"
-                       required/><br>
+                <!--<label for="username"><h4>Username: </h4></label>-->
+                <!--<input type="text"-->
+                       <!--id="username"-->
+                       <!--name="username"-->
+                       <!--ng-model="username"-->
+                       <!--size="50"-->
+                       <!--ng-unique="{key: 'users', property: 'username'}"-->
+                       <!--required/><br>-->
 
-                <label for="password"><h4>Password: </h4></label>
-                <input type="password"
-                       id="password"
-                       name="password"
-                       size="50"
-                       ng-model="password"
-                       required/><br><br>
+                <!--<label for="password"><h4>Password: </h4></label>-->
+                <!--<input type="password"-->
+                       <!--id="password"-->
+                       <!--name="password"-->
+                       <!--size="50"-->
+                       <!--ng-model="password"-->
+                       <!--required/><br><br>-->
 
-                <button type="submit" class="buttonClass">Register</button>
-            </div>
-        </form>
-    </div>
+                <!--<button type="submit" class="buttonClass">Register</button>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
 
-    </div>
-</div>
-</body>
-</html>
+    <!--</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

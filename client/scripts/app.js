@@ -8,14 +8,14 @@ var myApp = angular.module("myApp", ['as.sortable', 'ngRoute']);
             templateUrl: "assets/views/routes/start.html",
             controller: "InstructionsCtrl"
         }).
-        when('/login', {
-            templateUrl: "assets/views/routes/login.html",
-            controller: "AccountCtrl"
-        }).
-        when('/register', {
-            templateUrl: "assets/views/routes/register.html",
-            controller: "AccountCtrl"
-        }).
+        //when('/login', {
+        //    templateUrl: "assets/views/routes/login.html",
+        //    controller: "AccountCtrl"
+        //}).
+        //when('/register', {
+        //    templateUrl: "assets/views/routes/register.html",
+        //    controller: "AccountCtrl"
+        //}).
         when('/category', {
             templateUrl: "assets/views/routes/category.html",
             controller: "MainCtrl"
