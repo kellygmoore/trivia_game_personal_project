@@ -4,7 +4,14 @@ var router = express.Router();
 var pg = require('pg');
 
 
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/inorder_game_db';
+//var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/inorder_game_db';
+
+if(process.env.DATABASE_URL != undefined) {
+    connectionString = process.env.DATABASE_URL + "?ssl=true";
+} else {
+    connectionString = 'postgres://localhost:5432/sql_lecture';
+}
+
 
 console.log('in data');
 
