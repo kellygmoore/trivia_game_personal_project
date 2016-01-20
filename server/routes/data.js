@@ -9,11 +9,11 @@ var pg = require('pg');
 if(process.env.DATABASE_URL != undefined) {
     connectionString = process.env.DATABASE_URL + "?ssl=true";
 } else {
-    connectionString = 'postgres://localhost:5432/sql_lecture';
+    connectionString = 'postgres://localhost:5432/inorder_game_db';
 }
 
 
-console.log('in data');
+console.log('in data, here is connectionstring: ' + connectionString);
 
 
 router.get('/', function(req, res){
