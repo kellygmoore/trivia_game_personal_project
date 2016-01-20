@@ -3,7 +3,7 @@ var router = express.Router();
 //var path = require('path');
 var pg = require('pg');
 
-
+console.log("In data.js");
 //var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/inorder_game_db';
 
 if(process.env.DATABASE_URL != undefined) {

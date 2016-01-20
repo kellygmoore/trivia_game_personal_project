@@ -11,7 +11,7 @@ myApp.factory('ShareData', ["$http", function($http){
     var getTriviaData = function(){
         var promise = $http.get('/data').then(function(response){
             data = response.data;
-            //console.log("Async data response: ", data);
+            console.log("Async data response: ", data);
         });
         return promise;
     };
