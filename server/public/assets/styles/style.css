@@ -1,12 +1,12 @@
 
 body {
     font-family: 'Fredoka One', Arial, sans-serif;
-    background-color: darkblue;
+    background-color: #0c028b;
 }
 
 .bigDiv {
-    background-color: white;
-    width: 875px;
+    background-color: #FFFFFF;
+    /*width: 95%;*/
     /*height: 750px;*/
     margin: 40px 30px 0 30px;
     border: 10px ridge red;
@@ -14,7 +14,7 @@ body {
 }
 
 .mainBody {
-    margin: 20px auto 0 auto;
+    margin: 3% 0 0 3%;
 }
 
 #middle {
@@ -115,16 +115,16 @@ h3 img {
 }
 
 .pointsDifficultyDiv {
-    text-align: right;
-    margin-top: 15px;
-    height: 85px;
+    text-align: center;
+    /*margin-top: 15px;*/
+    /*height: 85px;*/
 }
 
 .categoryTitleDiv {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     font-size: 48px;
     text-align: center;
-    height: 90px;
+    /*height: 90px;*/
     text-shadow:
     -1px -1px 0 gold,
     1px -1px 0 gold,
@@ -138,9 +138,10 @@ h3 img {
 }
 
 .logoDiv {
-    height: 100px;
-    margin-top: 15px;
-    margin-left: 10px;
+    text-align: center;
+    /*height: 100px;*/
+    /*margin-top: 15px;*/
+    /*margin-left: 10px;*/
 }
 
 .ptsSpan {
