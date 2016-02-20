@@ -33,14 +33,14 @@ body {
     /*height: 5px;*/
 }
 
-img {
-    width: 100px;
-    height: 80px;
+.smallLogo {
+    width: 80%;
+    /*height: auto;*/
 }
 
 h3 img {
-    width: 40px;
-    height: auto;
+    width: 12%;
+    /*height: auto;*/
 }
 
 .as-sortable-item,
@@ -137,9 +137,17 @@ h3 img {
     1px 1px 0 gold;
 }
 
-.bigLogoDiv img {
-    width: 250px;
+/*.bigLogoDiv {*/
+    /*display: block;*/
+    /*margin: 20px auto 0 auto;*/
+    /*width: 260px*/
+/*}*/
+
+.bigLogo {
+    width: 33%;
     height: auto;
+    margin: 30px auto 0 auto;
+    display: block;
 }
 
 .logoDiv {
@@ -188,12 +196,6 @@ h3 img {
 
 .loginOrRegisterDiv {
     text-align: center;
-}
-
-.bigLogoDiv {
-    display: block;
-    margin: 20px auto 0 auto;
-    width: 260px
 }
 
 #instructions {
