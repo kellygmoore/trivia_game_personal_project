@@ -25,6 +25,10 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     $scope.trivia = [];
     $scope.totalPoints = 0;
     $scope.runningTotalPts = 0;
+    $scope.newCatValues = {};
+    //$scope.newCatValues.runningTotal = 100;
+    //console.log("running total: ", $scope.newCatValues.runningTotal);
+
 
     $scope.shareData = ShareData;
 
@@ -41,7 +45,6 @@ myApp.controller('MainCtrl', ["$scope", "$location", "ShareData", function($scop
     //play a session based on Category clicked on/////////////////////////////
     $scope.catObject = $scope.shareData.getCategory();
     //console.log("CatObject1: ", $scope.catObject);
-
 
     //talk to factory to get shared data and load first question in category/////////////////////
     $scope.playCategory = function(newValue){

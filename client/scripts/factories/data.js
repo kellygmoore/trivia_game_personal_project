@@ -92,24 +92,24 @@ myApp.factory('ShareData', ["$http", function($http){
 
 }]);
 
-
-myApp.factory('AuthService', ['$http', function($http) {
-console.log("In factory AuthService");
-    var serverCheckUniqueValue = function (id, property, value) {
-        var data = {
-            id: id,
-            property: property,
-            value: value
-        };
-        return $http.post("/login", data).then(function (res) {
-            return res.data.isUnique;
-        });
-    };
-
-    var publicAPI = {
-        checkUniqueValue: serverCheckUniqueValue
-    };
-
-    return publicAPI;
-
-}]);
+//
+//myApp.factory('AuthService', ['$http', function($http) {
+//console.log("In factory AuthService");
+//    var serverCheckUniqueValue = function (id, property, value) {
+//        var data = {
+//            id: id,
+//            property: property,
+//            value: value
+//        };
+//        return $http.post("/login", data).then(function (res) {
+//            return res.data.isUnique;
+//        });
+//    };
+//
+//    var publicAPI = {
+//        checkUniqueValue: serverCheckUniqueValue
+//    };
+//
+//    return publicAPI;
+//
+//}]);
