@@ -17,6 +17,10 @@ body {
     margin: 3% 0 0 3%;
 }
 
+.topDiv {
+    margin: 0 10px 12px 0;
+}
+
 #middle {
     margin-top: 15px;
     text-align: center;
@@ -25,7 +29,8 @@ body {
 
 .headerDiv {
     border-bottom: 4px solid black;
-    height: 5px;
+    width: 97%
+    /*height: 5px;*/
 }
 
 img {
