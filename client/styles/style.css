@@ -6,15 +6,33 @@ body {
 
 .bigDiv {
     background-color: #FFFFFF;
-    /*width: 95%;*/
+    width: 97%;
     /*height: 750px;*/
-    margin: 40px 30px 0 30px;
-    border: 10px ridge red;
+    margin: 3% auto;
+    border: 8px ridge red;
     border-radius: 20px;
 }
 
 .mainBody {
-    margin: 3% 0 0 3%;
+    margin: 2%;
+    text-align: center;
+}
+
+.mainBody img {
+    width: 15%;
+    margin: 2%;
+    /*display: block;*/
+    float: left;
+}
+
+.mainBody div {
+    text-align: left;
+    display: inline;
+    /*float: right;*/
+}
+
+.mainBody h2 {
+    padding: 2%;
 }
 
 .topDiv {
@@ -149,12 +167,7 @@ h3 img {
     /*width: 260px*/
 /*}*/
 
-.bigLogo {
-    width: 33%;
-    height: auto;
-    margin: 30px auto 0 auto;
-    display: block;
-}
+
 
 .ptsSpan {
     color: purple;
@@ -197,9 +210,9 @@ h3 img {
     text-align: center;
 }
 
-#instructions {
-    text-align: center;
-}
+/*#instructions {*/
+    /*text-align: center;*/
+/*}*/
 
 .categoryListDiv {
     text-align: center;
